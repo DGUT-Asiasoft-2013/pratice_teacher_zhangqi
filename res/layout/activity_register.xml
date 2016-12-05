@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:focusable="true" 
+        android:focusableInTouchMode="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical" >
+
+            <fragment
+                android:id="@+id/input_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
+                tools:layout="@layout/fragment_inputcell_simpletext" />
+
+            <fragment
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
+                tools:layout="@layout/fragment_inputcell_simpletext" />
+
+            <fragment
+                android:id="@+id/input_password_repeat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
+                tools:layout="@layout/fragment_inputcell_simpletext" />
+
+            <fragment
+                android:id="@+id/input_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                class="com.example.helloworld.fragments.inputcells.PictureInputCellFragment"
+                tools:layout="@layout/fragment_inputcell_picture" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="SUBMIT" />
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

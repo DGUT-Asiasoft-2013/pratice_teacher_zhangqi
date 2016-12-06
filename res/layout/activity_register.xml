@@ -7,7 +7,7 @@
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:focusable="true" 
+        android:focusable="true"
         android:focusableInTouchMode="true" />
 
     <ScrollView
@@ -22,6 +22,13 @@
 
             <fragment
                 android:id="@+id/input_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
+                tools:layout="@layout/fragment_inputcell_simpletext" />
+
+            <fragment
+                android:id="@+id/input_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"

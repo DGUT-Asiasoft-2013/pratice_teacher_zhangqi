@@ -30,6 +30,8 @@
             android:name="com.example.helloworld.RegisterActivity"
             android:theme="@style/AppTheme" >
         </activity>
+        <activity android:name="com.example.helloworld.HelloWorldActivity" >
+        </activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -10,5 +11,13 @@
         android:background="#ddf"
         android:gravity="center"
         android:text="HELLO WORLD" />
+
+    <fragment
+        android:id="@+id/frag_tabbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        class="com.example.helloworld.fragments.MainTabbarFragment"
+        tools:layout="@layout/fragment_main_tabbar" />
 
 </FrameLayout>

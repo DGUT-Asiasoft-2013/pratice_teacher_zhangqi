@@ -36,6 +36,8 @@
         </activity>
         <activity android:name="com.example.helloworld.FeedContentActivity" >
         </activity>
+        <activity android:name="com.example.helloworld.NewContentActivity" >
+        </activity>
     </application>
 
 </manifest>

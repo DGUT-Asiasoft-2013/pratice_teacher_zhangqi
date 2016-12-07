@@ -1,4 +1,4 @@
-package com.example.helloworld.fragments;
+package com.example.helloworld.fragments.widgets;
 
 import com.example.helloworld.R;
 
@@ -17,7 +17,7 @@ public class MainTabbarFragment extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_main_tabbar, null);
+		View view = inflater.inflate(R.layout.fragment_widget_main_tabbar, null);
 		
 		btnNew = view.findViewById(R.id.btn_new);
 		tabFeeds = view.findViewById(R.id.tab_feeds);
@@ -42,9 +42,37 @@ public class MainTabbarFragment extends Fragment {
 		return view;
 	}
 	
+	public static interface OnTabSelectedListener {
+		void onTabSelected(int index);
+	}
+	
+	OnTabSelectedListener onTabSelectedListener;
+	
+	public void setOnTabSelectedListener(OnTabSelectedListener onTabSelectedListener) {
+		this.onTabSelectedListener = onTabSelectedListener;
+	}
+	
+	public void setSelectedItem(int index){
+		if(index>=0 && index<tabs.length){
+			onTabClicked(tabs[index]);
+		}
+	}
+	
 	void onTabClicked(View tab){
-		for(View otherTab : tabs){
-			otherTab.setSelected(otherTab == tab);
+		int selectedIndex = -1;
+		
+		for(int i=0; i<tabs.length; i++){
+			View otherTab = tabs[i];
+			if(otherTab == tab){
+				otherTab.setSelected(true);
+				selectedIndex = i;
+			}else{
+				otherTab.setSelected(false);
+			}
+		}
+		
+		if(onTabSelectedListener!=null && selectedIndex>=0){
+			onTabSelectedListener.onTabSelected(selectedIndex);
 		}
 	}
 }

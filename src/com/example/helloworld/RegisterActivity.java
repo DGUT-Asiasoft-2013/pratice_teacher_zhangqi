@@ -99,7 +99,7 @@ public class RegisterActivity extends Activity {
 		String name = fragInputName.getText();
 		String email = fragInputEmailAddress.getText();
 
-		OkHttpClient client = new OkHttpClient();
+		OkHttpClient client = new OkHttpClient.Builder().build();
 
 		MultipartBody.Builder requestBodyBuilder = new MultipartBody.Builder()
 				.setType(MultipartBody.FORM)
@@ -134,12 +134,13 @@ public class RegisterActivity extends Activity {
 
 			@Override
 			public void onResponse(final Call arg0, final Response arg1) throws IOException {
+				final String responseString = arg1.body().string(); //雷：这个函数必须在后台线程中调用
 				runOnUiThread(new Runnable() {
 					public void run() {
 						progressDialog.dismiss();
 						
 						try {
-							RegisterActivity.this.onResponse(arg0, arg1.body().string());
+							RegisterActivity.this.onResponse(arg0, responseString);
 						} catch (Exception e) {
 							e.printStackTrace();
 							RegisterActivity.this.onFailure(arg0, e);

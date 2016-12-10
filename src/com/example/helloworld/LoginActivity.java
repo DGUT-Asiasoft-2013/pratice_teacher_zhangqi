@@ -102,6 +102,7 @@ public class LoginActivity extends Activity {
 
 			@Override
 			public void onResponse(Call arg0, Response arg1) throws IOException {
+				
 				final String responseString = arg1.body().string();
 				ObjectMapper mapper = new ObjectMapper();
 				final User user = mapper.readValue(responseString, User.class);

@@ -3,7 +3,8 @@ package com.example.helloworld;
 import java.io.IOException;
 import java.util.List;
 
-import com.example.helloworld.entity.User;
+import com.example.helloworld.api.Server;
+import com.example.helloworld.api.entity.User;
 import com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -79,16 +80,14 @@ public class LoginActivity extends Activity {
 	}
 
 	void goLogin(){
-		OkHttpClient client = new OkHttpClient.Builder()
-				.build();
+		OkHttpClient client = Server.getSharedClient();
 
 		MultipartBody requestBody = new MultipartBody.Builder()
 				.addFormDataPart("account", fragAccount.getText())
 				.addFormDataPart("passwordHash", MD5.getMD5(fragPassword.getText()))
 				.build();
 
-		Request request = new Request.Builder()
-				.url("http://172.27.0.56:8080/membercenter/api/login")
+		Request request = Server.requestBuilderWithApi("login")
 				.method("post", null)
 				.post(requestBody)
 				.build();
@@ -112,6 +111,7 @@ public class LoginActivity extends Activity {
 						dlg.dismiss();
 						new AlertDialog.Builder(LoginActivity.this)
 						.setMessage("Hello,"+user.getName())
+//						.setMessage(responseString)
 						.setPositiveButton("OK", new DialogInterface.OnClickListener(){
 							@Override
 							public void onClick(DialogInterface dialog, int which) {

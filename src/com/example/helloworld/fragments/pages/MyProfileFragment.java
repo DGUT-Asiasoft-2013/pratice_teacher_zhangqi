@@ -5,6 +5,7 @@ import java.io.IOException;
 import com.example.helloworld.R;
 import com.example.helloworld.api.Server;
 import com.example.helloworld.api.entity.User;
+import com.example.helloworld.fragments.widgets.AvatarView;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import android.app.Fragment;
@@ -26,6 +27,7 @@ public class MyProfileFragment extends Fragment {
 	
 	TextView textView;
 	ProgressBar progress;
+	AvatarView avatar;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class MyProfileFragment extends Fragment {
 			view = inflater.inflate(R.layout.fragment_page_my_profile, null);
 			textView = (TextView) view.findViewById(R.id.text);
 			progress = (ProgressBar) view.findViewById(R.id.progress);
+			avatar = (AvatarView) view.findViewById(R.id.avatar);
 		}
 
 		return view;
@@ -83,6 +86,7 @@ public class MyProfileFragment extends Fragment {
 	
 	protected void onResponse(Call arg0, User user) {
 		progress.setVisibility(View.GONE);
+		avatar.load(user);
 		textView.setVisibility(View.VISIBLE);
 		textView.setTextColor(Color.BLACK);
 		textView.setText("Hello,"+user.getName());

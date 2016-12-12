@@ -33,6 +33,10 @@ public class PasswordRecoverStep1Fragment extends Fragment {
 		return view;
 	}
 	
+	public String getText(){
+		return fragEmail.getText();
+	}
+	
 	@Override
 	public void onResume() {
 		super.onResume();

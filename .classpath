@@ -5,5 +5,23 @@
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.8.0.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/HelloWorld/javadocs/jackson-annotations-2.8.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/jackson-core-2.8.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/HelloWorld/javadocs/jackson-core-2.8.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.8.5.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/HelloWorld/javadocs/jackson-databind-2.8.5-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/okhttp-3.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/okhttp-urlconnection-3.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/okio-1.11.0.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

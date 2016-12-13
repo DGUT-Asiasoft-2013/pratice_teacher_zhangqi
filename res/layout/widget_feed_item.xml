@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="100dp"
+    android:padding="8dp" >
+
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="match_parent" >
+
+        <com.example.helloworld.fragments.widgets.AvatarView
+            android:id="@+id/avatar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/avatar"
+            android:layout_centerHorizontal="true"
+            android:text="name"
+            android:textColor="@android:color/darker_gray" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="68dp" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:text="Title"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="14dp"
+            android:textSize="12sp"
+            android:text="Create Date"
+            android:layout_gravity="right"
+            android:textColor="#aaa" />
+        
+        <TextView
+            android:id="@+id/text"
+            android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="Content Text" />
+    </FrameLayout>
+
+</FrameLayout>
